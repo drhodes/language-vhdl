@@ -207,7 +207,7 @@ instance Pretty CaseStatementAlternative where
          , indent $ vcat $ map pp ss]
 
 instance Pretty CharacterLiteral where
-  pp (CLit c) = char c
+  pp (CLit c) = char '\'' <> char c <> char '\''
 
 instance Pretty Choice where
   pp (ChoiceSimple s) = pp s
